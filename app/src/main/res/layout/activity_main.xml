@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/id_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="ViewPager Rtl 适配" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#F0F0F0" />
+
+    <Button
+        android:id="@+id/id_update_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="更新 layoutDirection(默认ltr)"
+        android:textAllCaps="false" />
+
+    <com.smile.rtlcompat.RtlCompatViewPager
+        android:id="@+id/id_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+</LinearLayout>
