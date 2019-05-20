@@ -212,7 +212,7 @@ public class RtlCompatViewPager extends ViewPager {
     }
 
     /**
-     * RtlPagerAdapter
+     * DelegatePageChangeListener
      */
     private class DelegatePageChangeListener implements OnPageChangeListener {
 
@@ -224,6 +224,8 @@ public class RtlCompatViewPager extends ViewPager {
 
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            if (onPageChangeListener == null) return;
+
             position = getUsedPosition(position);
             if (isRtlUsed()) {
                 float result = position - positionOffset;
@@ -237,11 +239,15 @@ public class RtlCompatViewPager extends ViewPager {
 
         @Override
         public void onPageSelected(int position) {
+            if (onPageChangeListener == null) return;
+
             onPageChangeListener.onPageSelected(getUsedPosition(position));
         }
 
         @Override
         public void onPageScrollStateChanged(int state) {
+            if (onPageChangeListener == null) return;
+
             onPageChangeListener.onPageScrollStateChanged(state);
         }
     }
