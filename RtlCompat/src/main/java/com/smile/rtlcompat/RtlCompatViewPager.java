@@ -56,6 +56,8 @@ public class RtlCompatViewPager extends ViewPager {
 
     // isRtlUsed
     private boolean isRtlUsed() {
+        if (forceFlag == FLAG_FORCE_LTR) return false;
+
         return isContextRtl || forceFlag == FLAG_FORCE_RTL;
     }
 
